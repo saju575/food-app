@@ -12,11 +12,16 @@ import img2 from "../../../assets/home/slide2.jpg";
 import img3 from "../../../assets/home/slide3.jpg";
 import img4 from "../../../assets/home/slide4.jpg";
 import img5 from "../../../assets/home/slide5.jpg";
+import SectionTitle from "../../../components/sectionTitle/SectionTitle";
 
 const Category = () => {
   return (
-    <div className="container mx-auto my-4">
+    <section className="container mx-auto my-4">
       {" "}
+      <SectionTitle
+        heading={"Order online"}
+        subHeading={"From 11.00 am to 10.00 pm"}
+      />
       <Swiper
         autoplay={{
           delay: 2500,
@@ -48,19 +53,25 @@ const Category = () => {
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={img3} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={img4} alt="" />
+          <img src={img3} alt="soup" />
           <h3 className="sm:text-2xl text-center uppercase text-white -mt-10">
-            Cake
+            Soup
           </h3>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={img5} alt="" />
+          <img src={img4} alt="desert" />
+          <h3 className="sm:text-2xl text-center uppercase text-white -mt-10">
+            Desert
+          </h3>
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={img5} alt="salads" />
+          <h3 className="sm:text-2xl text-center uppercase text-white -mt-10">
+            Salads
+          </h3>
         </SwiperSlide>
       </Swiper>
-    </div>
+    </section>
   );
 };
 
