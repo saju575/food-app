@@ -27,12 +27,19 @@ const Category = () => {
           delay: 2500,
           disableOnInteraction: false,
         }}
-        slidesPerView={4}
-        // breakpoints={{
-        //   760: {
-        //     slidesPerView: 4,
-        //   },
-        // }}
+        centeredSlides
+        // slidesPerView={4}
+        breakpoints={{
+          0: {
+            slidesPerView: 2,
+          },
+          480: {
+            slidesPerView: 3,
+          },
+          760: {
+            slidesPerView: 4,
+          },
+        }}
         spaceBetween={30}
         pagination={{
           clickable: true,

@@ -1,7 +1,10 @@
 import Banner from "../banner/Banner";
 import Category from "../category/Category";
+import Featured from "../featured/Featured";
+
 import Menu from "../menu/Menu";
 import Recommends from "../recommends/Recommends";
+import Testimonial from "../testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -10,6 +13,8 @@ const Home = () => {
       <Category />
       <Menu />
       <Recommends />
+      <Featured />
+      <Testimonial />
     </>
   );
 };
