@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
-import ReviewCard from "../../../components/reviewCard/reviewCard";
+import ReviewCard from "../../../components/reviewCard/ReviewCard";
 import SectionTitle from "../../../components/sectionTitle/SectionTitle";
 
 const Testimonial = () => {
@@ -45,6 +45,7 @@ const Testimonial = () => {
       </SwiperSlide>
     ));
   }
+
   return (
     <section className="py-14">
       <div className="container mx-auto px-4">
