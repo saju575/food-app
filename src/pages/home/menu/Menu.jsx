@@ -60,8 +60,8 @@ const Menu = () => {
       </div>
 
       {/* call us section */}
-      <div className="bg-black py-20 my-16 flex justify-center items-center">
-        <p className="text-white text-2xl font-medium">
+      <div className="bg-black py-20 my-12 flex justify-center items-center">
+        <p className="text-white md:text-2xl font-medium">
           Call Us: +8801923456789
         </p>
       </div>
