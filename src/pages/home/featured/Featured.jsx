@@ -5,10 +5,10 @@ import styles from "./Featured.module.css";
 import img from "../../../assets/home/featured.jpg";
 const Featured = () => {
   return (
-    <div className={`${styles.feature} bg-fixed  text-white`}>
-      <section className="bg-black opacity-80 py-8">
+    <div className={`${styles.feature}  text-white`}>
+      <section className="bg-black opacity-80 py-16">
         <SectionTitle heading="Featured Item" subHeading="Check it out" />
-        <div className="py-10 container px-4 mx-auto gap-8 flex flex-col md:flex-row items-center justify-center ">
+        <div className="py-10 container px-4 mx-auto gap-8 flex flex-col md:flex-row items-center justify-center">
           <div className="flex-1 ">
             <img src={img} alt="Album" />
           </div>

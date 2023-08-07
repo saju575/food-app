@@ -9,8 +9,8 @@ const Footer = () => {
   return (
     <>
       <footer className=" bg-neutral text-neutral-content">
-        <div className=" mx-auto flex  bg-neutral text-neutral-content">
-          <div className="p-10 w-1/2 bg-[#1F2937] flex flex-col items-center">
+        <div className=" mx-auto flex flex-col sm:flex-row bg-neutral text-neutral-content">
+          <div className="p-10 sm:w-1/2 bg-[#1F2937] flex flex-col items-center">
             <p className="footer-title">Contact Us</p>
             <address>
               <span>123 acb Street, Uni 11, Bangladesh</span>
@@ -19,7 +19,7 @@ const Footer = () => {
             <p>Mon - Fri 8.00 - 22.00</p>
             <p>Sat - Sun 10.00 - 23.00</p>
           </div>
-          <div className="p-10 w-1/2 bg-[#111827] flex flex-col  items-center">
+          <div className="p-10 sm:w-1/2 bg-[#111827] flex flex-col  items-center">
             <p className="footer-title">Follow US</p>
             <p>Join us on social media</p>
             <div className="flex flex-wrap gap-4">

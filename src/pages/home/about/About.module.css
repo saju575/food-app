@@ -1,0 +1,10 @@
+.about {
+  background: linear-gradient(rgba(135, 80, 156, 0.4), rgba(135, 80, 156, 0.5)),
+    url(../../../assets/home/chef-service.jpg) no-repeat;
+  background-size: cover;
+  background-position: center 51%;
+  background-attachment: fixed;
+
+  overflow: hidden;
+  position: relative;
+}
