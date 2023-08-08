@@ -1,38 +1,23 @@
-import { useEffect, useState } from "react";
 import MenuCard from "../../../components/menuCard/MenuCard";
 import SectionTitle from "../../../components/sectionTitle/SectionTitle";
+import { useGetMenusQuery } from "../../../features/client/menuItem/menuItemApi";
 
 const Menu = () => {
-  // state
-  const [menuItems, setMenuItems] = useState([]);
-
-  //error state
-  const [isError, setIsError] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
-
-  //fetch data in useEffect
-
-  useEffect(() => {
-    const dataFetch = async () => {
-      setIsError(false);
-      setErrorMsg("");
-      try {
-        const response = await fetch("./data/menu.json");
-        const data = await response.json();
-        setMenuItems(data);
-      } catch (error) {
-        setIsError(true);
-        setErrorMsg(error.message);
-      }
-    };
-    dataFetch();
-  }, [setErrorMsg, setIsError, setMenuItems]);
+  //fetch menu items
+  const {
+    data: menuItems,
+    isError,
+    isLoading,
+    error: errorMsg,
+  } = useGetMenusQuery();
 
   // what to render
   let render;
-  if (isError) {
+  if (isLoading) {
+    render = <p className="flex justify-center ">Loadding...</p>;
+  } else if (!isLoading && isError) {
     render = <p className="flex justify-center text-red-400">{errorMsg}</p>;
-  } else if (menuItems && menuItems.length > 0) {
+  } else if (!isLoading && menuItems && menuItems.length > 0) {
     render = (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-6">
         {

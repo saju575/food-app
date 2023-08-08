@@ -1,0 +1,23 @@
+.cover {
+  /* background: url(../../../assets/home/featured.jpg); */
+  background: linear-gradient(rgba(135, 80, 156, 0.2), rgba(135, 80, 156, 0.3)),
+    no-repeat;
+  background-size: cover;
+  background-position: center 51%;
+  background-attachment: fixed;
+
+  overflow: hidden;
+  position: relative;
+  min-height: 70vh;
+}
+
+@media (max-width: 768px) {
+  .cover {
+    min-height: 35vh;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .cover {
+    min-height: 50vh;
+  }
+}

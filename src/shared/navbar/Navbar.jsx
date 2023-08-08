@@ -4,7 +4,10 @@ const Navbar = () => {
   const menuItems = (
     <>
       <li className="uppercase font-semibold ">
-        <a>Home</a>
+        <Link to="/">Home</Link>
+      </li>
+      <li className="uppercase font-semibold ">
+        <Link to="/menu">Menu</Link>
       </li>
       <li className="uppercase font-semibold">
         <a>Contact Us</a>

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 //import swipper style
@@ -7,38 +6,26 @@ import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 import ReviewCard from "../../../components/reviewCard/ReviewCard";
 import SectionTitle from "../../../components/sectionTitle/SectionTitle";
+import { useGetReviewsQuery } from "../../../features/client/review/reviewApi";
 
 const Testimonial = () => {
-  // state
-  const [reviews, setReviews] = useState([]);
-  const [isError, setIsError] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
-
-  //useEffects
-  useEffect(() => {
-    const review = async () => {
-      setIsError(false);
-      setErrorMsg("");
-      try {
-        const response = await fetch("./data/reviews.json");
-        const reviewData = await response.json();
-
-        setReviews(reviewData);
-      } catch (error) {
-        setIsError(true);
-        setErrorMsg(error.message);
-      }
-    };
-    review();
-  }, [setErrorMsg, setIsError, setReviews]);
+  //data fetching
+  const {
+    data: reviews,
+    isLoading,
+    isError,
+    error: errorMsg,
+  } = useGetReviewsQuery();
 
   //what to rander
   let content;
-  if (isError) {
+  if (isLoading) {
+    content = <p className="text-center  text-lg">Loadding...</p>;
+  } else if (!isLoading && isError) {
     content = <p className="text-center text-red-400 text-lg">{errorMsg}</p>;
-  } else if (reviews.length === 0) {
+  } else if (!isLoading && reviews.length === 0) {
     content = <p className="text-center text-lg">No Review</p>;
-  } else if (reviews && reviews.length > 0) {
+  } else if (!isLoading && reviews && reviews.length > 0) {
     content = reviews.map((r) => (
       <SwiperSlide key={r._id}>
         <ReviewCard review={r} />
