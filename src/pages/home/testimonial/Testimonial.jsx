@@ -1,15 +1,16 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-//import swipper style
+// Importing Swiper styles and modules
 import "swiper/css";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
+
 import ReviewCard from "../../../components/reviewCard/ReviewCard";
 import SectionTitle from "../../../components/sectionTitle/SectionTitle";
 import { useGetReviewsQuery } from "../../../features/client/review/reviewApi";
 
 const Testimonial = () => {
-  //data fetching
+  // Fetching reviews data
   const {
     data: reviews,
     isLoading,
@@ -17,10 +18,10 @@ const Testimonial = () => {
     error: errorMsg,
   } = useGetReviewsQuery();
 
-  //what to rander
+  // Determining content to render based on loading and error states
   let content;
   if (isLoading) {
-    content = <p className="text-center  text-lg">Loadding...</p>;
+    content = <p className="text-center text-lg">Loading...</p>;
   } else if (!isLoading && isError) {
     content = <p className="text-center text-red-400 text-lg">{errorMsg}</p>;
   } else if (!isLoading && reviews.length === 0) {
@@ -36,10 +37,13 @@ const Testimonial = () => {
   return (
     <section className="py-14">
       <div className="container mx-auto px-4">
+        {/* Section title */}
         <SectionTitle
           heading="testimonials"
-          subHeading="What our client says"
+          subHeading="What our clients say"
         />
+
+        {/* Swiper component for testimonials */}
         <Swiper
           autoplay={{
             delay: 2500,
