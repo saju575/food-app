@@ -1,4 +1,5 @@
 import MenuCard from "../../../components/menuCard/MenuCard";
+import OrderButton from "../../../components/odrerButton/OrderButton";
 import SectionTitle from "../../../components/sectionTitle/SectionTitle";
 import { useGetMenusQuery } from "../../../features/client/menuItem/menuItemApi";
 
@@ -42,9 +43,7 @@ const Menu = () => {
 
       <div className="flex justify-center">
         {/* View full menu prompt */}
-        <p className="cursor-pointer text-center w-32 uppercase pb-2 border-b-2 text-sm md:text-base rounded border-black">
-          view full menu
-        </p>
+        <OrderButton btnTxt="view full menu" />
       </div>
 
       {/* Call us section */}
